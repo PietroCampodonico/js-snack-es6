@@ -49,4 +49,14 @@ for (let i = 0; i < catalogoBici.length; i++) {
 }
 
 const lighterBike = Math.min(...bikesWeigth);
-console.log(`La bicicletta più leggera tra quelle disponibili è la X, che pesa ${lighterBike}kg`)
+
+let lighterBikeModel;
+
+for (let i = 0; i < catalogoBici.length; i++) {
+    if (lighterBike === catalogoBici[i].peso) {
+        lighterBikeModel = catalogoBici[i].nome
+    }
+}
+
+console.log(lighterBikeModel);
+console.log(`La bicicletta più leggera tra quelle disponibili è la "${lighterBikeModel}", che pesa ${lighterBike} kg`);
