@@ -44,19 +44,20 @@ const catalogoBici = [
 
 const bikesWeigth = [];
 
-for (let i = 0; i < catalogoBici.length; i++) {
-    bikesWeigth.push(catalogoBici[i].peso)
-}
-
-const lighterBike = Math.min(...bikesWeigth);
-
 let lighterBikeModel;
 
-for (let i = 0; i < catalogoBici.length; i++) {
-    if (lighterBike === catalogoBici[i].peso) {
-        lighterBikeModel = catalogoBici[i].nome
+function bikeWeightSorter (originalArray, newArray, lighterBikeModel) {
+    for (let i = 0; i < originalArray.length; i++) {
+        newArray.push(originalArray[i].peso)
+
+        var lighterBike = Math.min(...newArray);
+
+        if (lighterBike === originalArray[i].peso) {
+            lighterBikeModel = originalArray[i].nome
+        }
     }
+
+    return console.log(`La bicicletta più leggera tra quelle disponibili è la "${lighterBikeModel}", che pesa ${lighterBike} kg`);
 }
 
-console.log(lighterBikeModel);
-console.log(`La bicicletta più leggera tra quelle disponibili è la "${lighterBikeModel}", che pesa ${lighterBike} kg`);
+bikeWeightSorter (catalogoBici, bikesWeigth, lighterBikeModel);
