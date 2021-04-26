@@ -8,8 +8,6 @@ function rNGenerator (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-console.log(rNGenerator(0, 30))
-
 const ListaSquadre = [
     squadra1 = {
         nome: "Milan",
@@ -54,23 +52,25 @@ const ListaSquadre = [
     },
 ];
 
-for (i = 0; i < ListaSquadre.length; i++) {
-    ListaSquadre[i].puntiFatti = rNGenerator(0, 30);
-    ListaSquadre[i].falliSubiti = rNGenerator(0, 30);
+// for (i = 0; i < ListaSquadre.length; i++) {
+//     ListaSquadre[i].puntiFatti = rNGenerator(0, 30);
+//     ListaSquadre[i].falliSubiti = rNGenerator(0, 30);
    
-    let {nome, falliSubiti} = ListaSquadre[i]; 
-    console.log(`La squadra "${nome}" ha subito ${falliSubiti} falli`);
-}
+//     let {nome, falliSubiti} = ListaSquadre[i]; 
+//     console.log(`La squadra "${nome}" ha subito ${falliSubiti} falli`);
+// }
 
 // Funzione
+function footballstatsTracker (array, min, max) {
 
-function footballChartGenerator (array, key1, key2, key3, min, max) {
     for (i = 0; i < array.length; i++) {
-        array[i].key1 = rNGenerator(min, max);
-        array[i].key2 = rNGenerator(min, max);
-        let {key3, key2} = array[i];
-        console.log(`La squadra "${key3}" ha subito ${key2} falli`);
+        array[i].puntiFatti = rNGenerator(min, max);
+        array[i].falliSubiti = rNGenerator(min, max);
+    
+        var {nome, falliSubiti} = array[i];
+        console.log(`La squadra "${nome}" ha subito ${falliSubiti} falli`);
     }
+    
 }
 
-console.log(footballChartGenerator (ListaSquadre, puntiFatti, falliSubiti, nome, 0, 30));
+footballstatsTracker(ListaSquadre, 0, 30);

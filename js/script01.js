@@ -4,6 +4,19 @@ Creare un array di oggetti:
 Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 */
+function bikeWeightSorter (originalArray, newArray, lighterBikeModel) {
+    for (let i = 0; i < originalArray.length; i++) {
+        newArray.push(originalArray[i].peso)
+
+        var lighterBike = Math.min(...newArray);
+
+        if (lighterBike === originalArray[i].peso) {
+            lighterBikeModel = originalArray[i].nome
+        }
+    }
+
+    return console.log(`La bicicletta più leggera tra quelle disponibili è la "${lighterBikeModel}", che pesa ${lighterBike} kg`);
+}
 
 const catalogoBici = [
     bici1 = {
@@ -45,19 +58,5 @@ const catalogoBici = [
 const bikesWeigth = [];
 
 let lighterBikeModel;
-
-function bikeWeightSorter (originalArray, newArray, lighterBikeModel) {
-    for (let i = 0; i < originalArray.length; i++) {
-        newArray.push(originalArray[i].peso)
-
-        var lighterBike = Math.min(...newArray);
-
-        if (lighterBike === originalArray[i].peso) {
-            lighterBikeModel = originalArray[i].nome
-        }
-    }
-
-    return console.log(`La bicicletta più leggera tra quelle disponibili è la "${lighterBikeModel}", che pesa ${lighterBike} kg`);
-}
 
 bikeWeightSorter (catalogoBici, bikesWeigth, lighterBikeModel);
