@@ -52,13 +52,6 @@ const ListaSquadre = [
     },
 ];
 
-// for (i = 0; i < ListaSquadre.length; i++) {
-//     ListaSquadre[i].puntiFatti = rNGenerator(0, 30);
-//     ListaSquadre[i].falliSubiti = rNGenerator(0, 30);
-   
-//     let {nome, falliSubiti} = ListaSquadre[i]; 
-//     console.log(`La squadra "${nome}" ha subito ${falliSubiti} falli`);
-// }
 
 // Funzione
 function footballstatsTracker (array, min, max) {
