@@ -63,7 +63,7 @@ function footballstatsTracker (array, min, max) {
         var {nome, falliSubiti} = array[i];
         console.log(`La squadra "${nome}" ha subito ${falliSubiti} falli`);
     }
-    
+    return console.log(ListaSquadre);
 }
 
 footballstatsTracker(ListaSquadre, 0, 30);
